@@ -1,0 +1,15 @@
+# Folosește imaginea oficială Python 3.10 slim ca bază
+FROM python:3.10-slim
+
+# Actualizează pip și instalează dependențele necesare
+RUN pip install --upgrade pip && \
+    pip install psutil
+
+# Copiază scriptul Python în container
+COPY python_script.py /usr/local/bin/python_script.py
+
+#Facem scriptul executabil
+RUN chmod +x /usr/local/bin/python_script.py
+
+# Comanda implicită care rulează scriptul Python
+CMD ["python", "/usr/local/bin/python_script.py"]
