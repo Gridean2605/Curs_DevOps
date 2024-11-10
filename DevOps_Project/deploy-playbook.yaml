@@ -1,0 +1,59 @@
+---
+- name: Deploy Docker Compose services
+  hosts: localhost
+  become: true
+  vars:
+    deployment_dir: "/home/ionut/ansible-deployment"
+    pyth_dir: "{{ deployment_dir }}/python_script"
+    bash_dir: "{{ deployment_dir }}/bash_script"
+    
+  tasks:
+    # 1. Crearea directorului de deployment
+    - name: Create deployment directory
+      file:
+        path: "{{ deployment_dir }}"
+        state: directory
+        mode: '0777'
+    # 2. Crearea directorului pt scriptul bash
+    - name: Create deployment directory
+      file:
+        path: "{{ pyth_dir }}"
+        state: directory
+        mode: '0777'
+    #3. Crearea directorului pt scriptul python
+    - name: Create bash directory
+      file:
+        path: "{{ bash_dir}}"
+        state: directory
+        mode: '0777'
+
+    # 4. Copierea fișierului bash script și Dockerfile
+    - name: Copy bash script and Dockerfile
+      copy:
+        src: "{{ item }}"
+        dest: "{{ bash_dir }}/{{ item | basename }}"
+      with_items:
+        - bash_script/bash_script.sh
+        - bash_script/dockerfile
+
+    # 5. Copierea fișierului python script și Dockerfile
+    - name: Copy python script and Dockerfile
+      copy:
+        src: "{{ item }}"
+        dest: "{{ pyth_dir }}/{{ item | basename }}"
+      with_items:
+        - python_script/python_script.py
+        - python_script/dockerfile
+
+    # 6. Copierea fișierului docker-compose.yml
+    - name: Copy docker-compose.yaml
+      copy:
+        src: "docker-compose.yaml"
+        dest: "{{ deployment_dir }}/docker-compose.yaml"
+
+    # 7. Rularea docker-compose pentru a lansa serviciile
+    - name: Run docker-compose up to deploy services
+      command:
+       cmd: "docker-compose up -d"
+       chdir: "{{ deployment_dir }}"
+

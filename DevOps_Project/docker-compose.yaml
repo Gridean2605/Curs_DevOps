@@ -2,5 +2,21 @@ version: '3.8'
 
 services:
   bash-script:
-  context: .
-  dockerfile:
+    build:
+     context: ./bash_script
+     dockerfile: dockerfile
+    container_name: bash_script_container
+    restart: always
+    volumes: 
+      - ./bash_script:/bash_script
+    command: /usr/local/bin/bash_script.sh
+  python-script:
+    build:
+      context: ./python_script
+      dockerfile: dockerfile
+    container_name: python-script-container
+    restart: always
+    volumes:
+      - ./python_script:/python_script
+    command: ["python3" , "/usr/local/bin/python_script.py"]
+
