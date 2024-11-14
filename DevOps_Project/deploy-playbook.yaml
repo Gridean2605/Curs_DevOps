@@ -1,6 +1,6 @@
 ---
 - name: Deploy Docker Compose services
-  hosts: all
+  hosts: localhost
   become: true
   vars:
     deployment_dir: "/home/ionut/ansible-deployment"
