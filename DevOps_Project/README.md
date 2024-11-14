@@ -28,7 +28,7 @@ Daca se doreste oprirea deploymentului, vom utiliza comanda docker-compose down
 Iar ulterior rezultatului, rulam comanda docker-compose up (sau docker-compose up -d , in caz ca dorim ca cele 2 containere sa ruleze in background) pentru a porni deploymentul care o sa porneasca cele 2 containere:
 ![image](https://github.com/user-attachments/assets/11a01a0b-3152-42d8-8753-5dd54ed7c896)
 
-Pentru rularea playbook-ului de Ansible,mai intai trebuie sa modificam informatiile din fisierul hosts, cu informatiile specificate aferente masinii virtuale de pe care se ruleaza. Ulterior trebuie rulata comanda trebuie rulata comanda ansible-playbook -i deploy-playbook.yaml, urmand ca output-ul sa fie similar celui atasat:
+Pentru rularea playbook-ului de Ansible,mai intai trebuie sa modificam informatiile din fisierul hosts, cu informatiile specificate aferente masinii virtuale(IP si username) de pe care se ruleaza. Ulterior trebuie rulata comanda trebuie rulata comanda ansible-playbook -i deploy-playbook.yaml, urmand ca output-ul sa fie similar celui atasat:
 ![image](https://github.com/user-attachments/assets/fde940bd-0e66-499f-bd3c-28522ad7496b)
 
 
