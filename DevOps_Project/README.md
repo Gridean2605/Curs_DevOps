@@ -1,9 +1,11 @@
 Prerequisites pentru functionarea proiectului:
    1. Python - in general este preinstalat in distributiile noi de Linux
-   2. Docker - pentru instalarea Docker trebuie rulata comanda sudo apt install docker
-   3. Docker-Compose - pentru instalarea Docker-Compose puteti utiliza comanda sudo apt install docker-compose
-   4. Ansible - pentru instalarea Ansible se poate utiliza comanda sudo apt install ansible
-   5. Git (optional) daca se doreste clonarea repositorului utilizand comanda git clone https://github.com/Gridean2605/Curs_DevOps/edit/main/DevOps_Project - sudo apt install git
+   2. Docker
+   3. Docker-Compose 
+   4. Pipx -> Pentru instalare Ansible
+   5. Ansible
+   6. Git
+Toate cele mentionate mai sus trebuie sa fie instalate inainte de a se incerca rularea proiectului
 
 Pentru rularea scripturilor, dupa clonarea repositorului, sa va asigurati ca acesta este executabil utilizand comanda ls -l.
 Daca acesta nu este executabil, trebuie rulata comanda chmod +x <nume_script> .
