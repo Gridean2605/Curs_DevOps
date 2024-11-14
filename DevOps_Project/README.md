@@ -29,7 +29,8 @@ Iar ulterior rezultatului, rulam comanda docker-compose up (sau docker-compose u
 ![image](https://github.com/user-attachments/assets/11a01a0b-3152-42d8-8753-5dd54ed7c896)
 
 Pentru rularea playbook-ului de Ansible, trebuie rulata comanda ansible-playbook -i deploy-playbook.yaml, urmand ca output-ul sa fie similar celui atasat:
-![image](https://github.com/user-attachments/assets/cfdc8d23-3f68-4a62-a98f-e0792b031f61)
+![image](https://github.com/user-attachments/assets/fde940bd-0e66-499f-bd3c-28522ad7496b)
+
 
 
 
